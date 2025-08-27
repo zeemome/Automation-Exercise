@@ -13,6 +13,7 @@ public class SignUpUsingValidCredentials extends BaseTest {
         pageObjectManager.getSignUpPage().clickSignUp();
         test.pass("passed");
         System.out.println("only for github and jenkins");
+        System.out.println("Another line from a branch");
     }
 
 

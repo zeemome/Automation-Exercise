@@ -44,6 +44,7 @@ public class BaseTest {
     public void setTest() {
         extent = new ExtentReports();
         extent.attachReporter(spark);
+
     }
 
 

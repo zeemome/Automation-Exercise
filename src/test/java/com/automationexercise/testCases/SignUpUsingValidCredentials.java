@@ -10,6 +10,7 @@ public class SignUpUsingValidCredentials extends BaseTest {
     public void verifySignUpUsingValidCredentials(){
         test = extent.createTest("SLDL-101 - Trying to signing up with valid credentials");
         pageObjectManager.getHomePage().clickSignUpLogin();
+        pageObjectManager.getSignUpPage().clickSignUp();
         test.pass("passed");
     }
 

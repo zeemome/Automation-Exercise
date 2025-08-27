@@ -7,7 +7,10 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
 
@@ -18,12 +21,8 @@ public class BaseTest {
     public ExtentSparkReporter spark;
 
     @BeforeSuite
-    public void setUpExtentReport(){
+    public void setUpExtentReport() {
         spark = new ExtentSparkReporter("target/ExtentReport.html");
-    }
-
-    @BeforeTest
-    public void setTest() {
         extent = new ExtentReports();
         extent.attachReporter(spark);
     }
@@ -41,14 +40,18 @@ public class BaseTest {
         pageObjectManager = new PageObjectManager(driver);
     }
 
+    @BeforeTest
+    public void setTest() {
+        extent = new ExtentReports();
+        extent.attachReporter(spark);
+    }
+
+
     @AfterClass
     public void tearDown() {
         driver.quit();
-    }
-
-    @AfterSuite
-    public void flush(){
         extent.flush();
     }
+
 
 }

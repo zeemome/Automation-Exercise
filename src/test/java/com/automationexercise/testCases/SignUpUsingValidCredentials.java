@@ -14,7 +14,7 @@ public class SignUpUsingValidCredentials extends BaseTest {
         test.pass("passed");
         System.out.println("only for github and jenkins");
         System.out.println("Another line from a branch");
-        System.out.println("One more line for demo");
+        System.out.println("This is for demo purpose");
     }
 
 

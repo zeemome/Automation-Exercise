@@ -9,12 +9,13 @@ public class SignUpUsingValidCredentials extends BaseTest {
     @Test
     public void verifySignUpUsingValidCredentials(){
         test = extent.createTest("SLDL-101 - Trying to signing up with valid credentials");
+        loginPagePom
         pageObjectManager.getHomePage().clickSignUpLogin();
         pageObjectManager.getSignUpPage().clickSignUp();
         test.pass("passed");
         System.out.println("only for github and jenkins");
         System.out.println("Another line from a branch");
-        System.out.println("One more line for demo");
+        System.out.println("This is for demo purpose");
     }
 
 
